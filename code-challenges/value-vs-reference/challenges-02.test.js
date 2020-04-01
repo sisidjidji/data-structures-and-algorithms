@@ -76,7 +76,11 @@ console.log(a) prints [1, 2, 3, 4]
 
 const append = (arr1, arr2) => {
   for(let i=0;i<arr2.length ;i++){
+<<<<<<< HEAD
     arr1.push(arr2[i]);
+=======
+    arr1.push(arr2[i]);git 
+>>>>>>> 31acc7699a7993c8d717e682d43ce2e84ee9c046
     console.log(arr1) ;
     }
 };
