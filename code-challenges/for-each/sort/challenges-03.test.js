@@ -123,11 +123,18 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
- arr.sort((a,b)=>{
-    return a.firstName-b.firstName
- });
-    return arr; 
+  arr.sort((a, b) => {
+    if (a.lastName > b.lastName) {
+      return 1;
+    } if (a.lastName < b.lastName) {
+      return -1;
+    } else {
+      return 0;
+    }
+  })
+  return arr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8
@@ -140,7 +147,19 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  // Solution code here...
+  return arr.sort((a,b)=>{
+  if (a.lastName.toLowerCase() < b.lastName.toLowerCase()) return -1;
+  if (a.lastName.toLowerCase() > b.lastName.toLowerCase()) return 1;
+  if (a.lastName.toLowerCase() === b.lastName.toLowerCase()) {
+    if (a.firstName.toLowerCase() < b.firstName.toLowerCase()) return -1;
+    if (a.firstName.toLowerCase() > b.firstName.toLowerCase()) return 1;
+    if (a.firstName.toLowerCase() === b.firstName.toLowerCase()) {
+      return a.age - b.age;
+    }
+   
+  }
+  return 0;
+});
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -165,8 +184,14 @@ const meetings = [
   new Meeting('Friday', '1200', '1345'),
 ];
 
+let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 const sortMeetingsByDay = (arr) => {
-  // Solution code here...
+  return arr.sort((a, b) => {
+    let day1 = days.findIndex(day => day === a.dayOfWeek);
+    let day2 = days.findIndex(day => day === b.dayOfWeek);
+    return day1 - day2;
+  }
+  )
 };
 
 /* ------------------------------------------------------------------------------------------------
