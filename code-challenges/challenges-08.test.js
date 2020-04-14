@@ -166,7 +166,14 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 ------------------------------------------------------------------------------------------------ */
 
 const evenOddNumericValues = (arr) => {
-  // Solution code here...
+  arr.reduce((acc,val)=> {
+    if(parseInt(acc.heigh)>parseInt(val.heigh)){
+      return val;
+    }else{
+      return acc;
+
+    }
+  }).name;
 };
 
 /* ------------------------------------------------------------------------------------------------
